@@ -4,7 +4,6 @@ The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines in the given images
 * Apply the same pipeline on a video - a series of images - to draw line segments onto the road
 * Optimize the pipeline for averaging/extrapolating the line segments to map out the full extent of lane lines
-* A written report on the approach followed
 
 ---
 
@@ -29,15 +28,19 @@ My pipeline consisted of the below 5 steps.
 5. Using Hough Transform to find out line segments
 6. Drawn lines on the original images
 
+Below are the images resulted out of each step in the pipeline:
 ![alt text][image1] ![alt text][image2] ![alt text][image3] ![alt text][image4]
 
-A function process_image is created with the pipeline code which takes an image as input and returns image with line segments drawn. This function is used to modify the images of a video clip by replacing the frame with the function output.
+A function <b>process_image()</b> is created with the pipeline code which takes an image as input and returns image with line segments drawn. This function is used to modify the images of a video clip by replacing the frame with the function output.
 
-In order to draw a single line on the left and right lines, I modified the draw_lines() function by
-1. Finding slope and center of left and right lines with thresholds defined to avoid extreme slopes
-2. Finding single left and right lanes by averaging all lines slope and center
-3. Derived coordinates of the left and right lines (x1,y1,x2,y2) using formula y-y1 = M(x-x1) where M is the slope of the line, (x,y) is the center of the line and the value of y1 is given as height of the image
+In order to draw a single line on the left and right lines, I modified the <b>draw_lines()</b> function by
+1. Finding slope and center of each line in an image and appending them to lists created for right and left slope and center
+2. Defining slope threshold between 0.5 and 0.9 for left and right lines to avoid extreme slopes
+3. Finding single left and right slop and center by averaging all lines slope and center
+4. Derived coordinates of the left and right lines (x1,y1,x2,y2) using formula y-y1 = M(x-x1) where M is the slope of the line, (x,y) is the center of the line and the value of y1 is given as height of the image
 4. Drawn left and right lane lines on the image
+
+The result of modified draw_lines() function is below image clip of the video:
 
 ![alt text][image6]
 
