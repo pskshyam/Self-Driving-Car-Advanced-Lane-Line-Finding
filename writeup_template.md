@@ -10,7 +10,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./test_images_output/grayscale/output_solidWhiteRight.jpg "Grayscale"
+[image1]: ./test_images_output/grayscale/output_solidWhiteCurve.jpg "Grayscale"
 [image2]: ./test_images_output/canny_edges/output_solidWhiteRight.jpg "Canny Edges"
 [image3]: ./test_images_output/masked_edges/output_solidWhiteRight.jpg "Masked Edges"
 [image4]: ./test_images_output/images_line_segments/output_solidWhiteRight.jpg "Line Segments"
