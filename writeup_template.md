@@ -33,8 +33,6 @@ My pipeline consisted of the below 5 steps.
 
 A function process_image is created with the pipeline code which takes an image as input and returns image with line segments drawn. This function is used to modify the images of a video clip by replacing the frame with the function output.
 
-![alt text][image5]
-
 In order to draw a single line on the left and right lines, I modified the draw_lines() function by
 1. Finding slope and center of left and right lines with thresholds defined to avoid extreme slopes
 2. Finding single left and right lanes by averaging all lines slope and center
