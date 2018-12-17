@@ -6,11 +6,6 @@ The goals / steps of this project are the following:
 * Optimize the pipeline for averaging/extrapolating the line segments to map out the full extent of lane lines
 * A written report on the approach followed
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
 ---
 
 ### Reflection
@@ -25,6 +20,13 @@ My pipeline consisted of the below 5 steps.
 5. Using Hough Transform to find out line segments
 6. Drawn lines on the original images
 
+[//]: # (Image References)
+
+[image1]: ./test_images_output/grayscale/output_solidWhiteRight.jpg "Grayscale"
+[image2]: ./test_images_output/canny_edges/output_solidWhiteRight.jpg "Canny Edges"
+[image3]: ./test_images_output/masked_edges/output_solidWhiteRight.jpg "Masked Edges"
+[image4]: ./test_images_output/images_line_segments/output_solidWhiteRight.jpg "Line Segments"
+
 A function process_image is created with the pipeline code which takes an image as input and returns image with line segments drawn.
 
 In order to draw a single line on the left and right lines, I modified the draw_lines() function by
@@ -32,6 +34,9 @@ In order to draw a single line on the left and right lines, I modified the draw_
 2. Finding single left and right lanes by averaging all lines slope and center
 3. Derived coordinates of the left and right lines
 4. Drawn left and right lane lines on the image
+
+![alt text][image1] ![alt text][image2] ![alt text][image3]
+![alt text][image4]
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
